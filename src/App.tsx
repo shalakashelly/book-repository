@@ -9,10 +9,12 @@ function App() {
        <h2>Welcome to Online Book Shopping App!</h2>
        <h4>Sign-in to continue</h4>
        <label>Username:</label>
-       <input name="username" />
-       <br/>
-       <label>Password:</label>
-       <input name="password" type="password" />
+       <select name="username">
+        <option>John</option>
+        <option>Tina</option>
+        <option>Samuel</option>
+        <option>Greg</option>
+       </select>
        <br/>
        <button>Submit</button>
       </header>
