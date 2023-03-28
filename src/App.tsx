@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -7,19 +6,20 @@ function App() {
     <div className="App">
       <header className="App-header">
        <h2>Welcome to Online Book Shopping App!</h2>
-       <h4>Sign-in to continue</h4>
-       <label>Username:</label>
-       <select name="username">
-        <option>John</option>
-        <option>Tina</option>
-        <option>Samuel</option>
-        <option>Greg</option>
-       </select>
        <br/>
-       <button>Submit</button>
+       <div>
+         <label>What is your name?</label>
+         <input type="text"/>
+       </div>
+       <br/>
+       <button onClick={loginUser}>Submit</button>
       </header>
     </div>
   );
+}
+
+function loginUser() {
+  return (true);
 }
 
 export default App;
