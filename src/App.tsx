@@ -2,11 +2,7 @@ import React, { FormEvent, useState } from 'react';
 import './App.css';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { authUser } from './store/userSlice';
-
-interface User {
-  username: string;
-}
+import { authUser, User } from './store/userSlice';
 
 function App() {
   const dispatch = useDispatch();
@@ -35,9 +31,9 @@ function App() {
       <form onSubmit={handleLogin}>
         <div>
           <label>Username:</label>  
-          <input required type="text" value={username} onChange={handleUsernameChange} />
+          <input required name="username" type="text" value={username} onChange={handleUsernameChange} />
         </div>
-        <button type="submit" disabled={isDisabled}>Login</button>
+        <button name="submit" type="submit" disabled={isDisabled}>Login</button>
       </form>
     </div>
   );

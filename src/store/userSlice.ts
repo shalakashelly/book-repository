@@ -5,19 +5,19 @@ export interface User {
 }
 
 export interface UserState {
-  user: User | null;
+  userInfo: User | null;
 }
 
 export const initialState: UserState = {
-  user: null,
+  userInfo: null,
 };
 
 const userSlice = createSlice({
-  name: "userSlice",
+  name: "user",
   initialState,
   reducers: {
     authUser(state: UserState, action: PayloadAction<User>) {
-      state.user = action.payload;
+      state.userInfo = action.payload;
     },
   },
 });

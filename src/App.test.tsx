@@ -1,49 +1,89 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 import userEvent from '@testing-library/user-event';
+import configureMockStore, { MockStore } from "redux-mock-store";
 import { Provider } from 'react-redux';
-import store from './store';
+import { authUser } from './store/userSlice';
 
 const mockUseNavigate = jest.fn();
+const mockStore = configureMockStore();
+let initialState = {};
+let store: MockStore;
 
 jest.mock('react-router-dom', () => ({
   useNavigate: () => mockUseNavigate,
   __esModule__: true
 }))
 
-const setup = () => {
+const setup = (initialState = {}) => {
+  store = mockStore(initialState) as MockStore;
   render(
     <Provider store={store}>
       <App />
     </Provider>
-)};
+  );
+  return { store }
+};
 
-describe('App', () => {
+describe('App component', () => {
+
   beforeEach(() => {
     jest.clearAllMocks();
+    initialState = {
+      users: {
+        userInfo: null,
+      },
+    };
+  });
+
+  it('dispatches authUser action with username on form submission', async () => {
+    let initialState = {
+      users: {
+        userInfo: {
+          username: "JohnDoe"
+        },
+      },
+    };
+    setup(initialState);
+    const username = "JohnDoe";
+
+    const userInput = screen.getByRole('textbox');
+    await userEvent.type(userInput, 'JohnDoe');
+
+    const submitButton = screen.getByRole('button');
+    await userEvent.click(submitButton);
+
+    expect(store.getActions()).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ type: authUser.type })
+      ])
+    );
+
+    const storeState = store.getState();
+    expect(storeState.users.userInfo.username).toEqual(username);
   });
 
   it('logging in navigates to the dashboard', async () => {
-    setup();
-  
+    setup(initialState);
+
     const userInput = screen.getByRole('textbox');
     await userEvent.type(userInput, 'username');
-  
+
     const submitButton = screen.getByRole('button');
     await userEvent.click(submitButton);
-  
+
     expect(mockUseNavigate).toBeCalledTimes(1);
     expect(mockUseNavigate).toBeCalledWith('/dashboard');
   });
-  
+
   it('does not navigate to dashboard when username is empty', async () => {
-    setup();
-  
+    setup(initialState);
+
     const submitButton = screen.getByRole('button');
     expect(submitButton).toBeDisabled();
-    
+
     await userEvent.click(submitButton);
-  
+
     expect(mockUseNavigate).toBeCalledTimes(0);
   });
 });

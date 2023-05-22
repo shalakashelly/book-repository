@@ -1,30 +1,50 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
-import store from "../store";
+import configureMockStore, { MockStore } from "redux-mock-store";
 import Home from "./Home";
 import { authUser } from '../store/userSlice';
 
-describe("Home component", () => {
-  test("renders 'Please log in' message when user is null", () => {
-    const { getByText } = render(
-      <Provider store={store}>
-        <Home />
-      </Provider>
-    );
+const mockStore = configureMockStore();
+let initialState = {};
+let store: MockStore;
 
-    expect(getByText("Please log in")).toBeInTheDocument();
+const setup = (initialState = {}) => {
+  store = mockStore(initialState) as MockStore; 
+  render(
+    <Provider store={store}>
+      <Home />
+    </Provider>
+  );
+  return {store}
+}
+
+describe("Home component", () => {
+
+  beforeEach(() => {
+    jest.clearAllMocks();
+    initialState = {
+      users: {
+        userInfo: null,
+      },
+    };
   });
 
-  test("renders 'Welcome, {username}!' message when user is not null", () => {
-    const username = "JohnDoe";
-    store.dispatch(authUser({ username }));
+  it("renders 'Please log in' message when user is null", () => {
+    setup(initialState);
 
-    const { getByText } = render(
-      <Provider store={store}>
-        <Home />
-      </Provider>
-    );
+    expect(screen.getByText("Please log in")).toBeInTheDocument();
+  });
 
-    expect(getByText(`Welcome, ${username}!`)).toBeInTheDocument();
+  it("renders 'Welcome, {username}!' message when user is not null", () => {
+    let initialState = {
+      users: {
+        userInfo: {
+          username: "JohnDoe"
+        },
+      },
+    };
+    setup(initialState);
+
+    expect(screen.getByText(`Welcome, JohnDoe!`)).toBeInTheDocument();
   });
 });
