@@ -7,6 +7,7 @@ import Home from './components/Home';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './store';
+// import BookCard from './components/BookCard';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -19,6 +20,7 @@ root.render(
           <Routes>
             <Route index path="/" element={<App />} />
             <Route path="/dashboard" element={<Home />} />
+            {/* <Route path="/books" element={<BookCard />} /> */}
           </Routes>
         </BrowserRouter>
       </React.StrictMode>

@@ -7,6 +7,7 @@ import { authUser } from '../store/userSlice';
 const mockStore = configureMockStore();
 let initialState = {};
 let store: MockStore;
+const testName = "JohnDoe";
 
 const setup = (initialState = {}) => {
   store = mockStore(initialState) as MockStore; 
@@ -36,15 +37,15 @@ describe("Home component", () => {
   });
 
   it("renders 'Welcome, {username}!' message when user is not null", () => {
-    let initialState = {
+    initialState = {
       users: {
         userInfo: {
-          username: "JohnDoe"
+          username: testName
         },
       },
     };
     setup(initialState);
 
-    expect(screen.getByText(`Welcome, JohnDoe!`)).toBeInTheDocument();
+    expect(screen.getByText(`Welcome, ${testName}!`)).toBeInTheDocument();
   });
 });
