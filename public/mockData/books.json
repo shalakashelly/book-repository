@@ -1,0 +1,189 @@
+[
+    {
+      "id": 4,
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "publisher": "Little, Brown and Company",
+      "publication_date": "1951",
+      "isbn": "9780316769174",
+      "description": "The story of Holden Caulfield, a teenage boy who struggles with alienation and disillusionment after being expelled from prep school.",
+      "categories": ["Fiction", "Classic"],
+      "tags": ["American literature", "Coming of age"]
+    },
+    {
+      "id": 5,
+      "title": "1984",
+      "author": "George Orwell",
+      "publisher": "Secker & Warburg",
+      "publication_date": "1949",
+      "isbn": "9780452284234",
+      "description": "A dystopian novel set in a future society where government surveillance, censorship, and propaganda are omnipresent.",
+      "categories": ["Fiction", "Science Fiction"],
+      "tags": ["British literature", "Totalitarianism"]
+    },
+    {
+      "id": 6,
+      "title": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien",
+      "publisher": "Allen & Unwin",
+      "publication_date": "1954",
+      "isbn": "9780547928210",
+      "description": "The epic story of Frodo Baggins, a hobbit who must destroy a powerful ring to save Middle-earth from the evil Sauron.",
+      "categories": ["Fiction", "Fantasy"],
+      "tags": ["British literature", "Adventure"]
+    },
+    {
+      "id": 7,
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "publisher": "T. Egerton",
+      "publication_date": "1813",
+      "isbn": "9780486284736",
+      "description": "The story of Elizabeth Bennet, a young woman living in 19th century England, and her relationship with the wealthy Mr. Darcy.",
+      "categories": ["Fiction", "Classic"],
+      "tags": ["British literature", "Romance"]
+    },
+    {
+      "id": 8,
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "publisher": "Allen & Unwin",
+      "publication_date": "1937",
+      "isbn": "9780547928227",
+      "description": "The story of Bilbo Baggins, a hobbit who embarks on a quest to reclaim treasure from the dragon Smaug with a group of dwarves and the wizard Gandalf.",
+      "categories": ["Fiction", "Fantasy"],
+      "tags": ["British literature", "Adventure"]
+    },
+    {
+      "id": 9,
+      "title": "The Picture of Dorian Gray",
+      "author": "Oscar Wilde",
+      "publisher": "Ward, Lock and Company",
+      "publication_date": "1890",
+      "isbn": "9780141439570",
+      "description": "A novel about a young man named Dorian Gray, who remains eternally young while a portrait of him ages and reflects the moral decay of his actions.",
+      "categories": ["Fiction", "Classic"],
+      "tags": ["Irish literature", "Gothic"]
+    },
+    {
+      "id": 10,
+      "title": "To the Lighthouse",
+      "author": "Virginia Woolf",
+      "publisher": "Hogarth Press",
+      "publication_date": "1927",
+      "isbn": "9780156907392",
+      "description": "The story of the Ramsay family and their visits to the Isle of Skye, exploring themes of perception, relationships, and the passage of time.",
+      "categories": ["Fiction", "Modernist"],
+      "tags": ["British literature", "Stream of consciousness"]
+    },
+    {
+      "id": 11,
+      "title": "Moby-Dick",
+      "author": "Herman Melville",
+      "publisher": "Richard Bentley",
+      "publication_date": "1851",
+      "isbn": "9780142437247",
+      "description": "The epic tale of Captain Ahab's obsession with hunting down the white whale Moby-Dick, exploring themes of nature, revenge, and the human spirit.",
+      "categories": ["Fiction", "Classic"],
+      "tags": ["American literature", "Adventure"]
+    },
+    {
+      "id": 12,
+      "title": "The Alchemist",
+      "author": "Paulo Coelho",
+      "publisher": "HarperOne",
+      "publication_date": "1988",
+      "isbn": "9780062315007",
+      "description": "The story of a young Andalusian shepherd named Santiago who travels in search of a treasure, learning important life lessons along the way.",
+      "categories": ["Fiction", "Spiritual"],
+      "tags": ["Brazilian literature", "Quest"]
+    },
+    {
+      "id": 13,
+      "title": "The Odyssey",
+      "author": "Homer",
+      "publisher": "Various",
+      "publication_date": "8th century BCE",
+      "isbn": "9780143039952",
+      "description": "An epic poem that follows the Greek hero Odysseus on his ten-year journey home after the fall of Troy, encountering mythical creatures and facing numerous challenges.",
+      "categories": ["Poetry", "Classic"],
+      "tags": ["Ancient literature", "Adventure"]
+    },
+    {
+      "id": 14,
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "publisher": "Chatto & Windus",
+      "publication_date": "1932",
+      "isbn": "9780060850524",
+      "description": "A dystopian novel set in a future society where human reproduction is controlled, emotions are suppressed, and citizens are conditioned to be content with their roles.",
+      "categories": ["Fiction", "Science Fiction"],
+      "tags": ["British literature", "Social commentary"]
+    },
+    {
+      "id": 15,
+      "title": "Jane Eyre",
+      "author": "Charlotte Brontë",
+      "publisher": "Smith, Elder & Co.",
+      "publication_date": "1847",
+      "isbn": "9780141441146",
+      "description": "The story of Jane Eyre, an orphan who becomes a governess and falls in love with her employer, Mr. Rochester, while facing challenges and discovering her own identity.",
+      "categories": ["Fiction", "Classic"],
+      "tags": ["British literature", "Gothic"]
+    },
+    {
+      "id": 16,
+      "title": "Crime and Punishment",
+      "author": "Fyodor Dostoevsky",
+      "publisher": "The Russian Messenger",
+      "publication_date": "1866",
+      "isbn": "9780140449136",
+      "description": "The psychological novel follows the story of Rodion Raskolnikov, a poor ex-student in Saint Petersburg, and his moral dilemmas after committing a murder.",
+      "categories": ["Fiction", "Classic"],
+      "tags": ["Russian literature", "Psychological"]
+    },
+    {
+      "id": 17,
+      "title": "The Great Expectations",
+      "author": "Charles Dickens",
+      "publisher": "Chapman & Hall",
+      "publication_date": "1861",
+      "isbn": "9780141439563",
+      "description": "The bildungsroman novel follows the life of an orphan named Pip, his encounters with various characters, and his pursuit of becoming a gentleman.",
+      "categories": ["Fiction", "Classic"],
+      "tags": ["British literature", "Coming of age"]
+    },
+    {
+      "id": 18,
+      "title": "The Brothers Karamazov",
+      "author": "Fyodor Dostoevsky",
+      "publisher": "The Russian Messenger",
+      "publication_date": "1880",
+      "isbn": "9780374528379",
+      "description": "A philosophical novel that explores complex themes such as religion, morality, and the nature of evil through the story of the Karamazov family.",
+      "categories": ["Fiction", "Classic"],
+      "tags": ["Russian literature", "Philosophical"]
+    },
+    {
+      "id": 19,
+      "title": "The Adventures of Huckleberry Finn",
+      "author": "Mark Twain",
+      "publisher": "Chatto & Windus",
+      "publication_date": "1884",
+      "isbn": "9780142437179",
+      "description": "The story of Huck Finn, a young boy who escapes his abusive father and embarks on a journey down the Mississippi River with a runaway slave named Jim.",
+      "categories": ["Fiction", "Adventure"],
+      "tags": ["American literature", "Coming of age"]
+    },
+    {
+      "id": 20,
+      "title": "One Hundred Years of Solitude",
+      "author": "Gabriel García Márquez",
+      "publisher": "Harper & Row",
+      "publication_date": "1967",
+      "isbn": "9780060883287",
+      "description": "The multigenerational story of the Buendía family, set in the fictional town of Macondo, blending magical realism with themes of love, solitude, and the cyclical nature of time.",
+      "categories": ["Fiction", "Magical Realism"],
+      "tags": ["Latin American literature", "Family saga"]
+    }
+]

@@ -36,3 +36,50 @@
     transform: rotate(360deg);
   }
 }
+
+.grid-wrapper {
+  margin: 20px;
+}
+
+.grid-title {
+  margin: 10px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.book {
+  background-color: #f2f2f2;
+  padding: 10px;
+  text-align: center;
+  margin: 10px;
+}
+
+.book-image {
+  width: 50px;
+  height: 50px;
+}
+
+.form-center {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-container {
+  padding: 0 20px;
+}
+
+.flex-form {
+  padding: 0 20px;
+  display: flex;
+}
+
+.flex-input_wrapper {
+  margin-right: 20px;
+}
+
+.flex-label {
+  padding: 0 10px;
+}

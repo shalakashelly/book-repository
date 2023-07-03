@@ -35,7 +35,7 @@ describe("Home component", () => {
   });
 
   it("renders 'Welcome, {username}!' message when user is not null", () => {
-    let initialState = {
+    initialState = {
       users: {
         userInfo: {
           username: "JohnDoe"
