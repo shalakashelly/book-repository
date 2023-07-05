@@ -8,7 +8,6 @@ import { authUser } from './store/userSlice';
 const mockUseNavigate = jest.fn();
 const mockStore = configureMockStore();
 let initialState = {};
-let store: MockStore;
 const testName = "JohnDoe";
 
 jest.mock('react-router-dom', () => ({
@@ -17,7 +16,7 @@ jest.mock('react-router-dom', () => ({
 }))
 
 const setup = (initialState = {}) => {
-  store = mockStore(initialState) as MockStore;
+  const store = mockStore(initialState) as MockStore;
   render(
     <Provider store={store}>
       <App />
@@ -45,7 +44,7 @@ describe('App component', () => {
         },
       },
     };
-    setup(initialState);
+    const { store } = setup(initialState);
     const username = testName;
 
     const userInput = screen.getByRole('textbox');
