@@ -8,7 +8,7 @@ import { authUser } from './store/userSlice';
 const mockUseNavigate = jest.fn();
 const mockStore = configureMockStore();
 let initialState = {};
-let store: MockStore;
+const testName = "JohnDoe";
 
 jest.mock('react-router-dom', () => ({
   useNavigate: () => mockUseNavigate,
@@ -16,7 +16,7 @@ jest.mock('react-router-dom', () => ({
 }))
 
 const setup = (initialState = {}) => {
-  store = mockStore(initialState) as MockStore;
+  const store = mockStore(initialState) as MockStore;
   render(
     <Provider store={store}>
       <App />
@@ -40,15 +40,15 @@ describe('App component', () => {
     let initialState = {
       users: {
         userInfo: {
-          username: "JohnDoe"
+          username: testName
         },
       },
     };
-    setup(initialState);
-    const username = "JohnDoe";
+    const { store } = setup(initialState);
+    const username = testName;
 
     const userInput = screen.getByRole('textbox');
-    await userEvent.type(userInput, 'JohnDoe');
+    await userEvent.type(userInput, testName);
 
     const submitButton = screen.getByRole('button');
     await userEvent.click(submitButton);
@@ -59,8 +59,11 @@ describe('App component', () => {
       ])
     );
 
-    const storeState = store.getState();
-    expect(storeState.users.userInfo.username).toEqual(username);
+    expect(store.getActions()).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ payload: {username: username} })
+      ])
+    );
   });
 
   it('logging in navigates to the dashboard', async () => {
