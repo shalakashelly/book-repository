@@ -55,13 +55,7 @@ describe('App component', () => {
 
     expect(store.getActions()).toEqual(
       expect.arrayContaining([
-        expect.objectContaining({ type: authUser.type })
-      ])
-    );
-
-    expect(store.getActions()).toEqual(
-      expect.arrayContaining([
-        expect.objectContaining({ payload: {username: username} })
+        expect.objectContaining({ type: authUser.type, payload: {username: username} })
       ])
     );
   });
