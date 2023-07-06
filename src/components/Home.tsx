@@ -13,7 +13,7 @@ export default function Home() {
         <div className="main-container">
             {user ? 
                 <div className="grid-wrapper">
-                    <p className="grid-title">Welcome, <b>{user.username}!</b></p>
+                    <p className="grid-title">Welcome, {user.username}!</p>
                     <BookCard />
                 </div> : <p className="grid-title">Please log in</p>}
         </div>

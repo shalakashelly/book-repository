@@ -6,6 +6,7 @@ import { authUser } from '../store/userSlice';
 
 const mockStore = configureMockStore();
 let initialState = {};
+const testName = "JohnDoe";
 
 const setup = (initialState = {}) => {
   const store = mockStore(initialState) as MockStore; 
@@ -38,12 +39,12 @@ describe("Home component", () => {
     initialState = {
       users: {
         userInfo: {
-          username: "JohnDoe"
+          username: testName
         },
       },
     };
     setup(initialState);
 
-    expect(screen.getByText(`Welcome, JohnDoe!`)).toBeInTheDocument();
+    expect(screen.getByText(`Welcome, ${testName}!`)).toBeInTheDocument();
   });
 });
