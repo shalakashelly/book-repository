@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
+import Books from '../pages/books';
 import { UserState } from '../store/userSlice'
-import BookCard from './BookCard';
 
 export default function Home() {
 
@@ -14,7 +14,7 @@ export default function Home() {
             {user ? 
                 <div className="grid-wrapper">
                     <p className="grid-title">Welcome, {user.username}!</p>
-                    <BookCard />
+                    <Books />
                 </div> : <p className="grid-title">Please log in</p>}
         </div>
     );
