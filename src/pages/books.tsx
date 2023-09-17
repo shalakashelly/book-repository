@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import BookCard from '../components/BookCard';
-import { IBook } from '../interfaces/books';
+import { TBook } from '../types/books';
 
 const Books = () => {
-    const [books, setBooks] = useState<IBook[]>([]);
+    const [books, setBooks] = useState<TBook[]>([]);
     const [isLoading, setIsLoading] = useState(true);
 
     const fetchBookData = async () => {

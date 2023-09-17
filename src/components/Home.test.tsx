@@ -6,7 +6,6 @@ import { authUser } from '../store/userSlice';
 
 const mockStore = configureMockStore();
 let initialState = {};
-let store: MockStore;
 const testName = "JohnDoe";
 
 const setup = (initialState = {}) => {

@@ -1,3 +1,16 @@
+export type TBook = {
+  id: number,
+  title: string,
+  author: string,
+  publisher?: string,
+  publication_date?: string,
+  isbn?: string,
+  description: string,
+  cover_image: string,
+  categories: Category[],
+  tags: Tags[]
+}
+
 export type Category =
   "Adventure" |
   "Classic" |

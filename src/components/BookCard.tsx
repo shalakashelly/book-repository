@@ -1,17 +1,20 @@
-import { IBook } from '../interfaces/books';
+import { TBook } from '../types/books';
 
-const BookCard = (key: any, book: IBook) => {
+interface BookCardProps {
+    id?: number;
+    book: TBook;
+}
+
+export default function BookCard({ book }: BookCardProps) {
 
     return (
-        <div key={key} className="book">
+        <div className="book">
             <img src="../images/book.jpg"
-                alt={book.title}
+                alt=""
                 className="book-image" />
             <h3>{book.title}</h3>
             <p>{book.author}</p>
         </div>
     );
 };
-
-export default BookCard;
   
