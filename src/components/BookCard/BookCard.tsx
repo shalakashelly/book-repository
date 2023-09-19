@@ -1,7 +1,6 @@
-import { TBook } from '../types/books';
+import { TBook } from '../../types/books';
 
 interface BookCardProps {
-    id?: number;
     book: TBook;
 }
 

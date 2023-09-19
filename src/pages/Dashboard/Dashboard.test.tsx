@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import configureMockStore, { MockStore } from "redux-mock-store";
-import Home from "./Home";
-import { authUser } from '../store/userSlice';
+import Dashboard from "./Dashboard";
+import { authUser } from '../../store/userSlice';
 
 const mockStore = configureMockStore();
 let initialState = {};
@@ -12,13 +12,13 @@ const setup = (initialState = {}) => {
   const store = mockStore(initialState) as MockStore; 
   render(
     <Provider store={store}>
-      <Home />
+      <Dashboard />
     </Provider>
   );
   return {store}
 }
 
-describe("Home component", () => {
+describe("Dashboard component", () => {
 
   beforeEach(() => {
     jest.clearAllMocks();

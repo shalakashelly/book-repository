@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
-import Books from '../pages/books';
-import { UserState } from '../store/userSlice'
+import Books from '../../components/Books/books';
+import { UserState } from '../../store/userSlice'
 
-export default function Home() {
+export default function Dashboard() {
 
     const getUsername = ( state: { users: UserState }) => {
         return state.users.userInfo;

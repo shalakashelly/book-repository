@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import BookCard from '../components/BookCard';
-import { TBook } from '../types/books';
+import BookCard from '../BookCard/BookCard';
+import { TBook } from '../../types/books';
 
 const Books = () => {
     const [books, setBooks] = useState<TBook[]>([]);

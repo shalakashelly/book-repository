@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import Home from './components/Home';
+import Dashboard from './pages/Dashboard/Dashboard';
 import { Provider } from 'react-redux';
 import store from './store';
 
@@ -17,7 +17,7 @@ root.render(
         <BrowserRouter>
           <Routes>
             <Route index path="/" element={<App />} />
-            <Route path="/dashboard" element={<Home />} />
+            <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
         </BrowserRouter>
       </React.StrictMode>
