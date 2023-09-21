@@ -3,8 +3,7 @@ import BookCard from '../BookCard/BookCard';
 import { TBook } from '../../types/books';
 
 const Books = () => {
-    const [books, setBooks] = useState<TBook[]>([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [books, setBooks] = useState<TBook[] | undefined | null>([]);
 
     const fetchBookData = async () => {
         try {
@@ -13,8 +12,7 @@ const Books = () => {
             setBooks(json);
         } catch (error) {
             console.error('Error fetching data:', error);
-        } finally {
-            setIsLoading(false);
+            setBooks(null);
         }
     };
 
@@ -22,7 +20,7 @@ const Books = () => {
         fetchBookData();
     }, []);
 
-    if (isLoading) {
+    if (!books) {
         return <div className="grid-title">Loading...</div>;
     }
 
