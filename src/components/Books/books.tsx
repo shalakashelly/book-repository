@@ -4,16 +4,20 @@ import { TBook } from '../../types/books';
 import { fetchAllBooks } from '../../services';
 
 const Books = () => {
-    const [books, setBooks] = useState<TBook[] | undefined | null>(null);
+    const [books, setBooks] = useState<TBook[] | undefined | null>();
 
     useEffect(() => {
-        fetchAllBooks()
-        .then(data => {
-            setBooks(data);
-        })
-        .catch(error => {
-            console.log("Error fetching data: ", error);
-        });
+        async function fetchData() {
+            try {
+              const data = await fetchAllBooks();
+              setBooks(data);
+            } catch (error) {
+              console.log("Error fetching data: ", error);
+              setBooks(null);
+            }
+        }
+
+        fetchData();
     }, []);
 
     if (!books) {
