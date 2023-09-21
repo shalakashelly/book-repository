@@ -3,7 +3,7 @@ export type TBook = {
   title: string,
   author: string,
   publisher?: string,
-  publicationDate?: number,
+  publicationDate?: string,
   isbn?: string,
   description: string,
   coverImage: string,
