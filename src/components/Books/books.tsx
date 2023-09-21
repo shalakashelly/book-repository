@@ -1,23 +1,19 @@
 import { useState, useEffect } from 'react';
 import BookCard from '../BookCard/BookCard';
 import { TBook } from '../../types/books';
+import { fetchAllBooks } from '../../services';
 
 const Books = () => {
-    const [books, setBooks] = useState<TBook[] | undefined | null>([]);
-
-    const fetchBookData = async () => {
-        try {
-            const response = await fetch('/mockData/books.json');
-            const json = await response.json();
-            setBooks(json);
-        } catch (error) {
-            console.error('Error fetching data:', error);
-            setBooks(null);
-        }
-    };
+    const [books, setBooks] = useState<TBook[] | undefined | null>(null);
 
     useEffect(() => {
-        fetchBookData();
+        fetchAllBooks()
+        .then(data => {
+            setBooks(data);
+        })
+        .catch(error => {
+            console.log("Error fetching data: ", error);
+        });
     }, []);
 
     if (!books) {
