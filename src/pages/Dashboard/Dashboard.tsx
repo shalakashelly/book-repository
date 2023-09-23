@@ -18,7 +18,7 @@ export default function Dashboard() {
                 </div>
             );
         } else {
-            <p className="grid-title">Please log in</p>
+            return <p className="grid-title">Please log in</p>
         }
     }
     
