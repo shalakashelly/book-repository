@@ -9,11 +9,11 @@ const Books = () => {
     useEffect(() => {
         async function fetchData() {
             try {
-              const data = await fetchAllBooks();
-              setBooks(data);
+                const data = await fetchAllBooks();
+                setBooks(data);
             } catch (error) {
-              console.log("Error fetching data: ", error);
-              setBooks(null);
+                console.log("Error fetching data: ", error);
+                setBooks(null);
             }
         }
 
