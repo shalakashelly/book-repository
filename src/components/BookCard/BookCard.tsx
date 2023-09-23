@@ -7,10 +7,10 @@ interface BookCardProps {
 export default function BookCard({ book }: BookCardProps) {
 
     return (
-        <div className="book">
+        <div className="bookCard">
             <img src="../images/book.jpg"
                 alt=""
-                className="book-image" />
+                className="book__image" />
             <h3>{book.title}</h3>
             <p>{book.author}</p>
         </div>

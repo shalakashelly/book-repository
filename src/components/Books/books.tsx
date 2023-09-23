@@ -25,7 +25,7 @@ const Books = () => {
     }
 
     return (
-        <div className="grid-container">
+        <div className="grid--books">
             {books.map((book) => (
                 <BookCard key={book.id} book={book} />
             ))}

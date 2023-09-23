@@ -26,12 +26,12 @@ function App() {
 
   const isDisabled = !username;
   return (
-    <div className="form-center">
-      <div className="flex-container">
+    <div className="form--center">
+      <div className="form__container">
         <h1>Welcome to the online Book Repository</h1>
-        <form className="flex-form" onSubmit={handleLogin}>
-          <div className="flex-input_wrapper">
-            <label className="flex-label">Username:</label>  
+        <form className="form" onSubmit={handleLogin}>
+          <div className="form__input__wrapper">
+            <label className="flex--label">Username:</label>  
             <input required name="username" type="text" value={username} onChange={handleUsernameChange} />
           </div>
           <button className="submit" name="submit" type="submit" disabled={isDisabled}>Login</button>

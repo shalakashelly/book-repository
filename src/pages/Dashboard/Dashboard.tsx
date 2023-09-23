@@ -12,15 +12,15 @@ export default function Dashboard() {
     function renderContent() {
         if(user) {
             return (
-                <div className="grid-wrapper">
-                    <p className="grid-title">Welcome, {user.username}!</p>
+                <div className="grid__wrapper">
+                    <p className="grid--title">Welcome, {user.username}!</p>
                     <Books />
                 </div>
             );
         } else {
-            return <p className="grid-title">Please log in</p>
+            return <p className="grid--title">Please log in</p>
         }
     }
     
-    return <div className="main-container">{renderContent()}</div>;
+    return <div className="main__container">{renderContent()}</div>;
 }
