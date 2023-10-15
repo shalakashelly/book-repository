@@ -3,7 +3,7 @@ declare global {
 }
 
 export function ignoreActWarnings() {
-    let prev: any;
+    let prev: boolean;
     beforeAll(() => {
         prev = global.IS_REACT_ACT_ENVIRONMENT;
         global.IS_REACT_ACT_ENVIRONMENT = false;
