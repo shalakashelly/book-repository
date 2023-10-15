@@ -1,5 +1,5 @@
 import React, { FormEvent, useState } from 'react';
-import './App.css';
+import styles from './App.module.scss';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { authUser, User } from './store/userSlice';
@@ -26,12 +26,12 @@ function App() {
 
   const isDisabled = !username;
   return (
-    <div className="form--center">
-      <div className="form__container">
+    <div className={styles.form__center}>
+      <div className={styles.form__container}>
         <h1>Welcome to the online Book Repository</h1>
-        <form className="form" onSubmit={handleLogin}>
-          <div className="form__input__wrapper">
-            <label className="flex--label">Username:</label>  
+        <form className={styles.form} onSubmit={handleLogin}>
+          <div className={styles.input__wrapper}>
+            <label className={styles.label}>Username:</label>  
             <input required name="username" type="text" value={username} onChange={handleUsernameChange} />
           </div>
           <button className="submit" name="submit" type="submit" disabled={isDisabled}>Login</button>

@@ -1,7 +1,8 @@
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-import Books from '../../components/Books/books';
+import Books from '../../components/Books/Books';
 import { UserState } from '../../store/userSlice'
+import styles from '../../App.module.scss';
 
 export default function Dashboard() {
 
@@ -42,15 +43,15 @@ export default function Dashboard() {
 
         if(user || displayedUsername) {
             return (
-                <div className="grid__wrapper">
-                    <p className="grid--title">Welcome, {user?.username || displayedUsername}!</p>
+                <div className={styles.grid__wrapper}>
+                    <p className={styles.grid__title}>Welcome, {user?.username || displayedUsername}!</p>
                     <Books />
                 </div>
             );
         } else {
-            return <p className="grid--title">Please log in</p>
+            return <p className={styles.grid__title}>Please log in</p>
         }
     }
     
-    return <div className="main__container">{renderContent()}</div>;
+    return <div>{renderContent()}</div>;
 }

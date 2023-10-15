@@ -2,7 +2,6 @@ import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import configureMockStore, { MockStore } from "redux-mock-store";
 import Dashboard from "./Dashboard";
-import { authUser } from '../../store/userSlice';
 
 const mockStore = configureMockStore();
 let initialState = {};

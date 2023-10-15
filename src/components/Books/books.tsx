@@ -1,22 +1,42 @@
 import BookCard from '../BookCard/BookCard';
-import { useBooks } from '../../hooks/useBooks'; // Import the custom hook
-
+import { useEffect, useState } from 'react';
+import { fetchAllBooks } from '../../services';
+import { TBook } from '../../types/books';
+import logger from '../../utils/logger';
+import styles from '../../App.module.scss';
 
 const Books = () => {
-    const books = useBooks();
+  const [books, setBooks] = useState<TBook[] | undefined | null>(undefined);
 
-    if (!books) {
-        return <div className="grid-title">Loading...</div>;
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const data = await fetchAllBooks();
+        setBooks(data);
+      } catch (error) {
+        logger.log('Error fetching data: ', error);
+        setBooks(null);
+      }
     }
 
-    return (
-        <div className="grid--books">
-            {books.map((book) => (
-                <BookCard key={book.id} book={book} />
-            ))}
-        </div>
-    );
+    fetchData();
+  }, []);
+
+  if (books === undefined) {
+    return <div className={styles.grid__title}>Loading...</div>;
+  }
+
+  if (books === null) {
+    return <div className={styles.grid__title}>Sorry, no books found!</div>;
+  }
+
+  return (
+    <div className={styles.books}>
+      {books.map((book) => (
+        <BookCard key={book.id} book={book} />
+      ))}
+    </div>
+  );
 };
 
 export default Books;
-  
