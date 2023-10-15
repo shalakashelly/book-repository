@@ -1,0 +1,40 @@
+
+.grid {
+
+  &__wrapper {
+    margin: 20px;
+  }
+
+  &__title {
+    margin: 10px;
+    padding: 0 15px;
+  }
+
+}
+
+.form {
+  padding: 0 20px;
+  display: flex;
+
+  &__center {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__container {
+    padding: 0 20px;
+  }
+}
+
+.input__wrapper {
+  margin-right: 20px;
+}
+
+.label {
+  padding: 0 10px;
+}
+
+.books {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}

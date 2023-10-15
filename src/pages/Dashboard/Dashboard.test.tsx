@@ -1,23 +1,23 @@
 import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import configureMockStore, { MockStore } from "redux-mock-store";
-import Home from "./Home";
-import { authUser } from '../store/userSlice';
+import Dashboard from "./Dashboard";
 
 const mockStore = configureMockStore();
 let initialState = {};
+const testName = "JohnDoe";
 
 const setup = (initialState = {}) => {
   const store = mockStore(initialState) as MockStore; 
   render(
     <Provider store={store}>
-      <Home />
+      <Dashboard />
     </Provider>
   );
   return {store}
 }
 
-describe("Home component", () => {
+describe("Dashboard component", () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
@@ -35,15 +35,15 @@ describe("Home component", () => {
   });
 
   it("renders 'Welcome, {username}!' message when user is not null", () => {
-    let initialState = {
+    initialState = {
       users: {
         userInfo: {
-          username: "JohnDoe"
+          username: testName
         },
       },
     };
     setup(initialState);
 
-    expect(screen.getByText(`Welcome, JohnDoe!`)).toBeInTheDocument();
+    expect(screen.getByText(`Welcome, ${testName}!`)).toBeInTheDocument();
   });
 });
